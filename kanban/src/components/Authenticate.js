@@ -1,7 +1,7 @@
 import React from "react";
-import SideNav from './SideNav';
-import Header from './Header';
-import Dashboard from './Dashboard';
+// import SideNav from './SideNav';
+// import Header from './Header';
+// import Dashboard from './Dashboard';
 import '../styles/Authenticate.modules.css';
 
 class Authenticate extends React.Component{
