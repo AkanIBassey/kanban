@@ -9,13 +9,16 @@ class Authenticate extends React.Component{
         super(props);
         this.isSignedIn = this.isSignedIn.bind(this);
         this.toggleForm = this.toggleForm.bind(this);
+        this.handleCreateNewUser = this.handleCreateNewUser.bind(this);
 
         this.state = {
             shouldSignIn: true,
             isSignedIn: true,
             userName: '',
             password: '',
-
+            userNames: [],
+            emails: [],
+            passwords: []
         }
     }
     isSignedIn() {
@@ -25,17 +28,21 @@ class Authenticate extends React.Component{
         const nextState = !this.state.shouldSignIn;
         this.setState(() => ({shouldSignIn: nextState}))
     }
+
+    handleCreateNewUser(e){
+        e.preventDefault();
+    }
     render(){
         return(
             <div className="authenticate">
+                <h1>KANBAN</h1>
                 
                 {
                     this.state.shouldSignIn 
                     ? 
                     <form className='formStyle'>
                         <h1 className='headingStyle'>Sign In</h1>
-                        <div>
-                            <label className="labelStyle">Email: </label>
+                        <label className="labelStyle">Email:
                             <input 
                                 type="text"
                                 name="userName"
@@ -44,36 +51,36 @@ class Authenticate extends React.Component{
                                 // value={email}
                                 className='inputStyle'
                             />
-                        </div>
-                        <div>
-                            <label className="labelStyle">Password: </label>
+                        </label>
+                        <label className="labelStyle">Password: 
                             <input 
                                 type="password"
                                 name="password"
-                                placeholder="password"
+                                placeholder="Password"
                                 required
                                 // value={password}
                                 className='inputStyle'
                             />
-                        </div>
+                        </label>
                         <button className="buttonStyle">Sign In</button>
                     </form> 
                     : 
-                    <form className='formStyle'>
+                    <form 
+                        className='formStyle'
+                        onSubmit={this.handleCreateNewUser}
+                    >
                         <h1 className='headingStyle'>Sign Up</h1>
-                        <div>
-                            <label className="labelStyle">Name: </label>
+                        <label className="labelStyle">Name: 
                             <input 
                                 type="text"
                                 name="userName"
-                                placeholder="Name"
+                                placeholder="User Name"
                                 required
                                 // value={email}
                                 className='inputStyle'
                             />
-                        </div>
-                        <div>
-                            <label className="labelStyle">Email: </label>
+                        </label>
+                        <label className="labelStyle">Email: 
                             <input 
                                 type="email"
                                 name="email"
@@ -82,30 +89,28 @@ class Authenticate extends React.Component{
                                 // value={email}
                                 className='inputStyle'
                             />
-                        </div>
-                        <div>
-                            <label className="labelStyle">Password: </label>
+                        </label>
+                        <label className="labelStyle">Password: 
                             <input 
                                 type="password"
                                 name="password"
-                                placeholder="password"
+                                placeholder="Password"
                                 required
                                 // value={password}
                                 className='inputStyle'
                             />
-                        </div>
-                        <div>
-                            <label className="labelStyle">Password: </label>
+                        </label>
+                        <label className="labelStyle">Password: 
                             <input 
                                 type="password"
                                 name="password"
-                                placeholder="confirm password"
+                                placeholder="Confirm Password"
                                 required
                                 // value={password}
                                 className='inputStyle'
                             />
-                        </div>
-                        <button className="buttonStyle">Sign In</button>
+                        </label>
+                        <button className="buttonStyle">Sign Up</button>
                     </form>
                 }
                 

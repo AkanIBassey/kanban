@@ -1,8 +1,9 @@
 .authenticate{
-  max-width: 80%;
-  padding: 2vh 0;
+  max-width: 500px;
+  width: 90%;
+  padding: 2vh 5px;
   display: block;
-  margin: 1vh auto;
+  margin: 20px auto;
   background-color: #f9f9f9;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -13,13 +14,11 @@
 }
 
 .formStyle{
-  width: 100%;
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 30px;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin: 40px auto;
+  padding: 30px;
   background-color: #e8e8e8;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
@@ -43,7 +42,6 @@
   border: 1px solid #ccc;
   font-size: 16px;
   outline: none;
-  transition: background-color 0.3s ease;
 }
 
 .inputStyle:focus{
@@ -64,5 +62,22 @@
 }
 
 .buttonStyle:hover {
-  background-color: '#0056b3',
+  background-color: #0056b3;
+}
+
+@media (max-width: 480px) {
+  .Authenticate,
+  .center {
+    width: 95%;
+    padding: 15px;
+  }
+
+  .headingStyle {
+    font-size: 22px;
+  }
+
+  .inputStyle,
+  .buttonStyle {
+    font-size: 14px;
+  }
 }
