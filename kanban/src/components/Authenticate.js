@@ -100,7 +100,7 @@ class Authenticate extends React.Component{
                                 className='inputStyle'
                             />
                         </label>
-                        <label className="labelStyle">Password: 
+                        <label className="labelStyle">Confirm Password: 
                             <input 
                                 type="password"
                                 name="password"
