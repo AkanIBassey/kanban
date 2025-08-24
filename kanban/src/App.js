@@ -1,15 +1,29 @@
-import React from "react";
+import {Routes, Route} from 'react-router-dom';
 import Authenticate from './components/Authenticate';
+import Dashboard from './components/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
+import { useState } from 'react';
 import './App.css';
 
-class Kanban extends React.Component {
-  render(){
-    return(
-      <div>
-        <Authenticate />
-      </div>
-    )
-  }
+function Kanban() {
+  const [activeUser, setActiveUser] = useState("")
+  return(
+    <div>
+      <Routes>
+        <Route 
+          path='/' 
+          element={<Authenticate setActiveUser={setActiveUser}/>} 
+        />
+        <Route 
+          path='/dashboard' 
+          element={<ProtectedRoute 
+            component={<Dashboard activeUser={activeUser} />} 
+            activeUser={activeUser} />} 
+        />
+      </Routes>
+      
+    </div>
+  )
 }
 
 export default Kanban;

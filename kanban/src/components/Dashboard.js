@@ -1,13 +1,11 @@
 import React from "react";
 
-class Dashboard extends React.Component{
-    render(){
-        return(
-            <div  style={{border: '1px solid blue'}}>
-                Dashboard
-            </div>
-        )
-    }
+function Dashboard({ activeUser }) {
+    return(
+        <div  style={{border: '1px solid blue'}}>
+            Dashboard - {activeUser}
+        </div>
+    )
 }
 
 export default Dashboard;
